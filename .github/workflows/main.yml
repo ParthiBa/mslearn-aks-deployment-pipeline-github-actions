@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and push staging images
-        uses: ams0/acr-task-github-action@v1
+        uses: ams0/acr-task-github-action@v2
         with:
           service_principal: ${{ secrets.service_principal }}
           service_principal_password: ${{ secrets.service_principal_password }}
