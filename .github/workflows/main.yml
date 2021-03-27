@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and push staging images
-        uses: docker/build-push-action@v1.1.1
+        uses: docker/build-push-action@v2
         with:
           username: ${{ secrets.ACR_LOGIN }}
           password: ${{ secrets.ACR_PASSWORD }}
