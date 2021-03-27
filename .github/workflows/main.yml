@@ -9,21 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build and push staging images
-        uses: docker/build-push-action@v2
+        uses: ams0/acr-task-github-action@v1
         with:
-          username: ${{ secrets.ACR_LOGIN }}
-          password: ${{ secrets.ACR_PASSWORD }}
-          registry: ${{ secrets.ACR_NAME }}
-          repository: contoso-website
-          tags: latest
-          tag_with_ref: #optional
-          tag_with_sha: #optional
-          path: #optional
-          dockerfile: #optional
-          target: #optional
-          always_pull: #optional
-          build_args: #optional
-          cache_froms: #optional
-          labels: #optional
-          add_git_labels: #optional
-          push: #optional
+          service_principal: ${{ secrets.service_principal }}
+          service_principal_password: ${{ secrets.service_principal_password }}
+          tenant: ${{ secrets.tenant }}
+          registry: ${{ secrets.registry }}
+          repository: ${{ secrets.repository }}
+          image: poi1
+          folder: src/
+          dockerfile: Dockerfile
