@@ -28,7 +28,7 @@ jobs:
           uses: Azure/setup-helm@v1
           with:
             # Version of helm
-            version: 3.4.0
+            version: v3.4.0
         
         - name: Azure Kubernetes set context
           uses: Azure/aks-set-context@v1

@@ -29,7 +29,7 @@ jobs:
             uses: Azure/setup-helm@v1
             with:
               # Version of helm
-              version: 3.4.0
+              version: v3.4.0
 
           - name: Azure Kubernetes set context
             uses: Azure/aks-set-context@v1
@@ -45,9 +45,9 @@ jobs:
                 --create-namespace \
                 --atomic \
                 --wait \
-                --namespace staging \
+                --namespace production \
                 contoso-website \
                 ./kubernetes/contoso-website \
                 --set image.repository=${{ secrets.ACR_NAME}} \
                 --set dns.name=${{ secrets.DNS_NAME }}
-
+                --set image.tag=${GITHUB_REF##*/}
