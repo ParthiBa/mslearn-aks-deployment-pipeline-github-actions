@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo "Defining variables..."
-export RESOURCE_GROUP_NAME=mslearn-gh-pipelines-$RANDOM
+export RESOURCE_GROUP_NAME=mslearn-gh-pu-pipelines-$RANDOM
 export AKS_NAME=contoso-video
 export ACR_NAME=ContosoContainerRegistry$RANDOM
 declare DNS_GROUP_NAME=$RESOURCE_GROUP_NAME
 
 echo "Searching for resource group..."
-az group create -n $RESOURCE_GROUP_NAME -l eastus
+az group create -n $RESOURCE_GROUP_NAME -l westeurope
 
 echo "Creating cluster..."
 az aks create \
